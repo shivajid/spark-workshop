@@ -80,7 +80,7 @@ You can examine RDD's schema and cache it:
 ```scala
 scala> tweetTableHive.printSchema()
 
-scala> tweetsTableHive.cache()
+scala> tweetTableHive.cache()
 ```
 Why did we cache the RDD? We will be running Hive queries against the RDD soon so it helps to store it in memory for faster query processing. 
 
@@ -125,6 +125,8 @@ At this point, we've created a SchemaRDD called `texts`. This RDD contains the t
 scala> import org.apache.spark.mllib.feature.HashingTF
 
 scala> import org.apache.spark.mllib.clustering.KMeans
+
+scala>import org.apache.spark.mllib.linalg.Vector
 
 scala> val tf = new HashingTF(1000)
 
